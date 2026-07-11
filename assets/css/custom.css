@@ -135,7 +135,7 @@ img.h-36.w-36.rounded-full {
 
 /* Dark mode video opacity adjustment */
 .dark #background-video {
-  opacity: 0.4 !important; /* Slightly more transparent in dark mode */
+  opacity: 1 !important; /* Full opacity: pure black video + crisp stars, no blue tint */
   pointer-events: none !important; /* Allow clicks to pass through */
 }
 
@@ -145,7 +145,7 @@ article h1 {
 }
 
 .dark article h1 {
-  color: inherit !important; /* Use default dark mode color */
+  color: #ffffff !important; /* White name text on the dark background */
 }
 
 article h2 {
@@ -153,7 +153,16 @@ article h2 {
 }
 
 .dark article h2 {
-  color: inherit !important; /* Use default dark mode color */
+  color: #ffffff !important; /* White headline/bio text on the dark background */
+}
+
+/* Dark mode: white text everywhere it should match the black background */
+.dark .main-menu nav a,
+.dark article .prose,
+.dark article .prose p,
+.dark footer,
+.dark footer a {
+  color: #ffffff !important;
 }
 
 /* Make icons black in light mode on homepage */
@@ -167,8 +176,8 @@ article .text-2xl a svg,
 .dark article a svg,
 .dark article .text-2xl a svg,
 .dark .text-2xl a svg {
-  color: inherit !important; /* Use default dark mode color */
-  fill: currentColor !important; /* Use current text color in dark mode */
+  color: #ffffff !important; /* White icons in dark mode to match the text */
+  fill: #ffffff !important;
 }
 
 /* Target author links specifically */
@@ -177,7 +186,7 @@ article .text-2xl a {
 }
 
 .dark article .text-2xl a {
-  color: inherit !important; /* Use default dark mode color */
+  color: #ffffff !important; /* White author/social links in dark mode */
 }
 
 /* Social icons wrapper with circular gray background */
@@ -189,5 +198,38 @@ article .text-2xl a {
 /* Add spacing between social icons */
 .social-icons-wrapper > a {
   margin: 0 0.5rem !important; /* Add horizontal margin to each icon link */
+}
+
+/* Dark mode: white header icons (search, appearance switcher, menu toggle) */
+.dark header a,
+.dark header button,
+.dark header svg {
+  color: #ffffff !important;
+}
+
+/* Dark mode: white footer text (copyright + "Powered by" attribution),
+   overriding the theme's neutral-400/500 muted colors */
+.dark footer,
+.dark footer p,
+.dark footer span,
+.dark footer a,
+.dark footer .text-neutral-400,
+.dark footer .text-neutral-500 {
+  color: #ffffff !important;
+}
+
+/* Dark mode: white appearance (dark/light) switcher, search button + input.
+   These live outside <header>, so they kept the theme's blue-200 color. */
+.dark #appearance-switcher,
+.dark #appearance-switcher-mobile,
+.dark #appearance-switcher svg,
+.dark #appearance-switcher-mobile svg,
+.dark #search-button,
+.dark #search-button-mobile,
+.dark #search-button svg,
+.dark #search-button-mobile svg,
+.dark #search-query {
+  color: #ffffff !important;
+  fill: #ffffff !important;
 }
 

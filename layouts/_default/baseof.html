@@ -12,7 +12,12 @@
   {{ $bodyColor := "text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral" }}
   {{ $bodyScrollbar := "scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600" }}
   <body class="{{ $bodyLayout }} {{ $bodyColor }} {{ $bodyScrollbar }}">
-    {{/* Background Video - on all pages */}}
+    {{/* Background Video - on all pages. Use a content-hashed URL so browsers
+         re-fetch when the video file changes (avoids serving a stale cached bg). */}}
+    {{ $bgSrc := "/bg.mp4" }}
+    {{ with resources.Get "bg.mp4" }}
+      {{ $bgSrc = (. | fingerprint "md5").RelPermalink }}
+    {{ end }}
     <div class="fixed inset-x-0 top-0 -z-10 h-screen w-full pointer-events-none">
       <video
         id="background-video"
@@ -22,7 +27,7 @@
         muted
         playsinline
         role="presentation">
-        <source src="/bg.mp4" type="video/mp4">
+        <source src="{{ $bgSrc }}" type="video/mp4">
       </video>
     </div>
     <div id="the-top" class="absolute flex self-center">

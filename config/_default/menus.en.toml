@@ -7,19 +7,19 @@ weight = 10
 pre = "instagram"
 url = "http://Instagram.com/pathof100x"
 identifier = "h7nDCg4C6C"
-weight = 9_999
+weight = 9_992
 
 [[main]]
 pre = "tiktok"
 url = "https://www.tiktok.com/@pathof100x?_r=1&_t=ZP-92Dp3hJviwR"
 identifier = "NvBOPv14si"
-weight = 9_999
+weight = 9_993
 
 [[main]]
-pre = "twitter"
+pre = "x-twitter"
 url = "http://X.com/pathof100x"
 identifier = "GyMZXUun54"
-weight = 9_999
+weight = 9_991
 
 [[footer]]
 none = "none"
