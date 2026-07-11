@@ -1,0 +1,27 @@
+disabled = false
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "PathOf100X"
+
+[params]
+displayName = "EN"
+isoCode = "en"
+rtl = false
+dateFormat = "January 2 2006"
+logo = "logo.png"
+
+[[params.author.links]]
+instagram = "http://Instagram.com/pathof100x"
+
+[[params.author.links]]
+tiktok = "https://www.tiktok.com/@pathof100x?_r=1&_t=ZP-92Dp3hJviwR"
+
+[[params.author.links]]
+twitter = "http://X.com/pathof100x"
+
+["params.author"]
+image = "image.png"
+name = "Martin F."
+bio = " "
+headline = "Pathof100x is my personal trading hub where I document my journey, share trade ideas, break down setups, and post profits, losses, and lessons for educational purposes. This platform is built on discipline, faith, and the belief that consistent learning creates exponential growth. Nothing here is financial advice, just my real process, strategies, and insights, shared to motivate and help traders sharpen their mindset and skills. Welcome to the path toward becoming 100x better, one trade at a time."

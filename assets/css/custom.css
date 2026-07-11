@@ -1,0 +1,193 @@
+/* Coin GIF Background Animation */
+body {
+  position: relative;
+}
+
+/* Very slow, subtle animation keyframes - much slower to reduce flashing */
+@keyframes verySlowBackground {
+  0%, 100% {
+    opacity: 0.15;
+    filter: blur(3px);
+  }
+  50% {
+    opacity: 0.2;
+    filter: blur(2px);
+  }
+}
+
+/* Dark mode very slow animation */
+@keyframes verySlowBackgroundDark {
+  0%, 100% {
+    opacity: 0.1;
+    filter: blur(3px);
+  }
+  50% {
+    opacity: 0.15;
+    filter: blur(2px);
+  }
+}
+
+/* Animated coin background - behind default theme background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* background-image: url('/img/Coin gif animation.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 0.15; /* Much lower opacity to reduce flashing effect */
+  filter: blur(3px); /* Soft blur to make animation less jarring */
+  animation: verySlowBackground 25s ease-in-out infinite; /* Very slow 25-second cycle */
+  animation-timing-function: linear; /* Smooth, linear timing */
+}
+
+/* Dark mode opacity adjustment with very slow animation */
+.dark body::before {
+  opacity: 0.1; /* Even lower opacity in dark mode */
+  animation: verySlowBackgroundDark 25s ease-in-out infinite;
+}
+
+/* Ensure content areas have proper background for readability */
+main,
+#main-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Yellow hover - only for clickable/interactive elements (links, buttons, etc.) */
+a:hover,
+button:hover,
+[role="button"]:hover,
+[type="button"]:hover,
+[type="submit"]:hover,
+select:hover,
+.cursor-pointer:hover,
+[onclick]:hover {
+  color: #fbbf24 !important; /* Yellow-400 from Tailwind */
+}
+
+a:hover {
+  text-decoration-color: #fbbf24 !important;
+}
+
+.prose a:hover {
+  color: #fbbf24 !important;
+  text-decoration-color: #fbbf24 !important;
+}
+
+/* Dark mode yellow hover for clickable elements */
+.dark a:hover,
+.dark button:hover,
+.dark [role="button"]:hover,
+.dark [type="button"]:hover,
+.dark [type="submit"]:hover,
+.dark select:hover,
+.dark .cursor-pointer:hover,
+.dark [onclick]:hover {
+  color: #facc15 !important; /* Slightly brighter yellow for dark mode */
+}
+
+.dark a:hover {
+  text-decoration-color: #facc15 !important;
+}
+
+.dark .prose a:hover {
+  color: #facc15 !important;
+  text-decoration-color: #facc15 !important;
+}
+
+/* Make site title in top left bigger and bold */
+.main-menu nav a {
+  font-size: 1.5rem !important; /* text-2xl equivalent - 24px */
+  line-height: 1.75rem !important;
+  font-weight: bold !important;
+}
+
+/* Make logo smaller and reduce corner radius */
+.logo {
+  max-height: 3.5rem !important; /* Reduced from 5rem to 3.5rem (56px) */
+  max-width: 3.5rem !important;
+  border-radius: 2rem !important; 
+  margin-top: 5px !important; /* Move logo down 5px */
+}
+
+.logo svg {
+  height: 3.5rem !important; /* Reduced from 5rem */
+  width: 3.5rem !important;
+}
+
+/* Make center profile/avatar image have square corners (no border-radius) */
+img.h-36.w-36.rounded-full {
+  border-radius: 65px !important; /* Square corners, no rounding */
+}
+
+/* Make background video semi-transparent and non-interactive */
+#background-video {
+  opacity: 0.2 !important; /* More transparent in light mode */
+  pointer-events: none !important; /* Allow clicks to pass through */
+}
+
+/* Dark mode video opacity adjustment */
+.dark #background-video {
+  opacity: 0.4 !important; /* Slightly more transparent in dark mode */
+  pointer-events: none !important; /* Allow clicks to pass through */
+}
+
+/* Make text black in light mode on homepage */
+article h1 {
+  color: #000000 !important; /* Black text in light mode */
+}
+
+.dark article h1 {
+  color: inherit !important; /* Use default dark mode color */
+}
+
+article h2 {
+  color: #000000 !important; /* Black text in light mode */
+}
+
+.dark article h2 {
+  color: inherit !important; /* Use default dark mode color */
+}
+
+/* Make icons black in light mode on homepage */
+article a svg,
+article .text-2xl a svg,
+.text-2xl a svg {
+  color: #000000 !important; /* Black icons in light mode */
+  fill: #000000 !important; /* Black fill for SVG icons */
+}
+
+.dark article a svg,
+.dark article .text-2xl a svg,
+.dark .text-2xl a svg {
+  color: inherit !important; /* Use default dark mode color */
+  fill: currentColor !important; /* Use current text color in dark mode */
+}
+
+/* Target author links specifically */
+article .text-2xl a {
+  color: #000000 !important; /* Black icons in light mode */
+}
+
+.dark article .text-2xl a {
+  color: inherit !important; /* Use default dark mode color */
+}
+
+/* Social icons wrapper with circular gray background */
+.social-icons-wrapper {
+  background-color: rgba(128, 128, 128, 0.25) !important; /* Gray with 75% transparency (25% opacity) */
+  border-radius: 9999px !important; /* Fully rounded circle */
+}
+
+/* Add spacing between social icons */
+.social-icons-wrapper > a {
+  margin: 0 0.5rem !important; /* Add horizontal margin to each icon link */
+}
+
