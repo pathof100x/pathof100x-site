@@ -2,6 +2,9 @@
 title: "[INSTRUMENT] Futures Trade Recap - [DATE]"
 date: 2000-01-01
 draft: true
+build:
+  render: never
+  list: never
 description: "Breaking down my latest futures trade: analyzing the setup, confluence factors, and outcome."
 tags: ["trading-recap", "futures", "[nq/me/gc]", "technical-analysis"]
 categories: ["Trading Recaps"]

@@ -2,6 +2,9 @@
 title: "[INSTRUMENT] Futures Trade Recap - [DATE]"
 date: 2000-01-01
 draft: true
+build:
+  render: never
+  list: never
 ---
 
 # How to Add Trading Charts to Your Trade Recaps
