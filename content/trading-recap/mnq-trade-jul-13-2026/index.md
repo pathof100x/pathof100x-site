@@ -1,7 +1,7 @@
 ---
 title: "MNQ Futures Trade Recap - Jul 13, 2026"
 date: 2026-07-13
-draft: true
+draft: false
 description: "MNQ long off a 3m inverse FVG after a sellside sweep and break of structure in the silver-bullet window."
 tags: ["trading-recap", "futures", "mnq", "nasdaq", "ict", "smc"]
 categories: ["Trading Recaps"]
@@ -15,7 +15,7 @@ summary: "Long off a 3m inverse FVG after a sellside sweep of the NY Low and a b
 **Direction:** Long  
 **Session:** roughly 10:40 to 11:00 AM ET  
 **Model:** ICT Silver Bullet (10 to 11 AM window)  
-**Result:** ✅ **WIN**, about +111 pts to target [confirm contracts / $ P&L]
+**Result:** ✅ **WIN**, about +111 points to target
 
 {{< figure src="featured.png" alt="MNQ 3m: sellside sweep of the NY Low, BOS, and an inverse FVG long into the NY Open High" caption="MNQ 3m: price swept the NY Low, broke structure, then delivered a long off the 3m inverse FVG straight into the NY Open High draw." >}}
 
@@ -27,7 +27,7 @@ The morning built the whole story before the entry ever showed up. Price sold of
 
 - **Sweep:** sellside taken below the NY Low
 - **BOS:** displacement leg back up confirmed the shift in order flow
-- **Entry:** retrace into the **3m inverse FVG** (around 29,601 to 29,624), long as the gap held as support [confirm exact fill]
+- **Entry:** retrace into the **3m inverse FVG** (around 29,601 to 29,624), long as the gap held as support
 - **Stop:** below the iFVG (around 29,600)
 - **Target:** NY Open High at **29,735** (session extended to about 29,752)
 - **R:R:** about 24 pts risk for about 111 pts to target, roughly **1:4.6**
