@@ -1,7 +1,7 @@
 ---
 title: "MNQ Futures Trade Recap - Jul 17, 2026"
 date: 2026-07-17
-draft: true
+draft: false
 description: "MNQ long off a discount 3M FVG after a sellside sweep and BOS, targeting buyside liquidity at the highs."
 tags: ["trading-recap", "futures", "mnq", "nasdaq", "ict", "smc"]
 categories: ["Trading Recaps"]

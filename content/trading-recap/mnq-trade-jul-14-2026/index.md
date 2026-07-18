@@ -1,7 +1,7 @@
 ---
 title: "MNQ Futures Trade Recap - Jul 14, 2026"
 date: 2026-07-14
-draft: true
+draft: false
 description: "MNQ short off a 3m inverse FVG under the BPR, targeting sellside liquidity at the session lows."
 tags: ["trading-recap", "futures", "mnq", "nasdaq", "ict", "smc"]
 categories: ["Trading Recaps"]
