@@ -1,7 +1,7 @@
 ---
 title: "MNQ Futures Trade Recap - Aug 07, 2026"
 date: 2026-08-07
-draft: true
+draft: false
 description: "MNQ short after a buyside sweep of the Asia, London, and PDH highs, reclaimed with a BOS into a bearish FVG, targeting the sellside pool."
 tags: ["trading-recap", "futures", "mnq", "nasdaq", "ict", "smc"]
 categories: ["Trading Recaps"]
