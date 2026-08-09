@@ -48,8 +48,11 @@
           {{- (.Resize "1280x").RelPermalink }} 1280w
           {{- if ge $maxW 1600 }},
           {{- (.Resize "1600x").RelPermalink }} 1600w
+          {{- end }}
+          {{- if gt $maxW 1600 }},
+          {{- .RelPermalink }} {{ $maxW }}w
           {{- end }}"
-          sizes="(min-width: 768px) 60vw, 92vw"
+          sizes="(min-width: 768px) 72vw, 96vw"
           data-zoom-src="{{ .RelPermalink }}"
         />
       {{- end }}
