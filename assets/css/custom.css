@@ -233,6 +233,17 @@ article .text-2xl a {
   fill: #ffffff !important;
 }
 
+/* Homepage intro: left-aligned paragraphs at a comfortable reading width.
+   The profile layout centers everything, which makes multi-paragraph text
+   wrap raggedly and look unprofessional. Keep name/avatar/socials centered,
+   but let the statement read as a clean left-aligned block. */
+.home-intro {
+  text-align: left !important;
+  max-width: 40rem !important; /* ~640px comfortable measure */
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 /* ------------------------------------------------------------------ */
 /* Phone-friendly typography (<= 640px only; desktop stays unchanged) */
 /* ------------------------------------------------------------------ */
