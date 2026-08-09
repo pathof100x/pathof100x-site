@@ -1,0 +1,9 @@
+{
+  // Cloudflare Workers static-site config for PathOf100X (Hugo output in ./public)
+  "name": "pathof100x-site",
+  "compatibility_date": "2025-08-01",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+}
