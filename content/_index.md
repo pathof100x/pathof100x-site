@@ -1,4 +1,5 @@
 ---
+title: "Martin Trades"
 ---
 
 This is my personal trading journal, a transparent look into my journey through the futures market. I share my trade ideas, break down my setups and execution, and document the wins, losses, mistakes, and lessons that continue to shape me as a trader.
