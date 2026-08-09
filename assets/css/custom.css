@@ -233,3 +233,43 @@ article .text-2xl a {
   fill: #ffffff !important;
 }
 
+/* ------------------------------------------------------------------ */
+/* Phone-friendly typography (<= 640px only; desktop stays unchanged) */
+/* ------------------------------------------------------------------ */
+@media (max-width: 640px) {
+  /* Base body text: 18px -> 16px */
+  body {
+    font-size: 16px !important;
+  }
+
+  /* Site title in the top bar: 24px -> ~18px */
+  .main-menu nav a {
+    font-size: 1.15rem !important;
+    line-height: 1.5rem !important;
+  }
+
+  /* Big page/article titles (homepage name + recap titles): 36px -> ~26px */
+  article h1 {
+    font-size: 1.65rem !important;
+    line-height: 2rem !important;
+  }
+
+  /* Homepage intro/headline: 20px -> ~17.5px */
+  article h2 {
+    font-size: 1.1rem !important;
+    line-height: 1.6rem !important;
+  }
+
+  /* Recap section headings ("The Trade", etc.): 24px -> 20px */
+  .prose h2 {
+    font-size: 1.25rem !important;
+    line-height: 1.7rem !important;
+  }
+
+  /* Footer a touch smaller */
+  footer,
+  .dark footer {
+    font-size: 0.875rem !important;
+  }
+}
+
