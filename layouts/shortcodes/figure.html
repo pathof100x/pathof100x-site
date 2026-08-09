@@ -1,0 +1,63 @@
+{{/* Project override of Blowfish's figure shortcode.
+     Adds a 1600px srcset candidate and uses 1280px as the default src so wide
+     charts stay sharp on large / retina screens (theme default caps at 1280).
+     Pairs with [imaging] resampleFilter = Lanczos + quality for crisp output. */}}
+{{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
+{{ if .Get "default" }}
+  {{ partial "hugo-embedded/shortcodes/figure-default.html" . }}
+{{ else }}
+  {{- $url := urls.Parse (.Get "src") }}
+  {{- $altText := .Get "alt" }}
+  {{- $caption := .Get "caption" }}
+  {{- $href := .Get "href" }}
+  {{- $class := .Get "class" }}
+  {{- $target := .Get "target" | default "_blank" }}
+  {{- $nozoom := .Get "nozoom" | default false -}}
+
+  <figure>
+  {{- with $href }}<a href="{{ . }}" {{ with $target }}target="{{ . }}"{{ end }} class="inline-block">{{ end -}}
+  {{- if findRE "^https?" $url.Scheme }}
+      <img class="my-0 rounded-md{{ with $nozoom }} nozoom{{ end }}{{ with $class }} {{ . }}{{ end }}" src="{{ $url.String }}" alt="{{ $altText }}" />
+  {{- else }}
+    {{- $resource := "" }}
+    {{- if $.Page.Resources.GetMatch ($url.String) }}
+      {{- $resource = $.Page.Resources.GetMatch ($url.String) }}
+    {{- else if resources.GetMatch ($url.String) }}
+      {{- $resource = resources.Get ($url.String) }}
+    {{- end }}
+    {{- with $resource }}
+      {{- if or $disableImageOptimization (eq .MediaType.SubType "svg")}}
+        <img
+          class="my-0 rounded-md{{ with $nozoom }} nozoom{{ end }}{{ with $class }} {{ . }}{{ end }}"
+          src="{{ .RelPermalink }}"
+          alt="{{ $altText }}"
+        />
+      {{- else }}
+        {{- $maxW := .Width }}
+        <img
+          class="my-0 rounded-md{{ with $nozoom }} nozoom{{ end }}{{ with $class }} {{ . }}{{ end }}"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="{{ $altText }}"
+          {{ with .Width }}width="{{ . }}"{{ end }}
+          {{ with .Height }}height="{{ . }}"{{ end }}
+          src="{{ (.Resize "1280x").RelPermalink }}"
+          srcset="
+          {{- (.Resize "800x").RelPermalink }} 800w,
+          {{- (.Resize "1280x").RelPermalink }} 1280w
+          {{- if ge $maxW 1600 }},
+          {{- (.Resize "1600x").RelPermalink }} 1600w
+          {{- end }}"
+          sizes="(min-width: 768px) 60vw, 92vw"
+          data-zoom-src="{{ .RelPermalink }}"
+        />
+      {{- end }}
+    {{- else }}
+      <img class="my-0 rounded-md{{ with $nozoom }} nozoom{{ end }}{{ with $class }} {{ . }}{{ end }}" src="{{ $url.String }}" alt="{{ $altText }}" />
+    {{- end }}
+  {{- end }}
+  {{ if $href }}</a>{{ end }}
+  {{ with $caption }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+  </figure>
+{{- end -}}
